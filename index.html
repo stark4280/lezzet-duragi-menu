@@ -3,35 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lezzet Durağı Menü</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <title>Lezzet Durağı QR Kod</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             background-color: #f5f5f5;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
             text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         h1 {
@@ -39,208 +30,45 @@
             margin-bottom: 20px;
         }
 
-        nav {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: 500;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #f0f0f0;
-        }
-
-        section {
-            background-color: #fff;
-            padding: 25px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
-        }
-
-        .menu-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .menu-item {
-            padding: 15px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            transition: transform 0.3s;
-        }
-
-        .menu-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .menu-item h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .menu-item p {
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            display: block;
-            font-weight: bold;
-            color: #e74c3c;
-            font-size: 1.2em;
-        }
-
         #qrcode {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
             display: inline-block;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 5px;
-            margin-top: 20px;
         }
 
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .menu-items {
-                grid-template-columns: 1fr;
-            }
+        .instructions {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Lezzet Durağı</h1>
-            <div id="qrcode"></div>
-        </header>
-        
-        <nav>
-            <ul>
-                <li><a href="#kahvalti">Kahvaltı</a></li>
-                <li><a href="#ana-yemekler">Ana Yemekler</a></li>
-                <li><a href="#tatlilar">Tatlılar</a></li>
-                <li><a href="#icecekler">İçecekler</a></li>
-            </ul>
-        </nav>
-
-        <main>
-            <section id="kahvalti">
-                <h2>Kahvaltı</h2>
-                <div class="menu-items">
-                    <div class="menu-item">
-                        <h3>Serpme Kahvaltı</h3>
-                        <p>Zeytin, peynir çeşitleri, bal, kaymak, reçel, domates, salatalık</p>
-                        <span class="price">₺150</span>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Omlet</h3>
-                        <p>Peynirli, mantarlı, sebzeli</p>
-                        <span class="price">₺45</span>
-                    </div>
-                </div>
-            </section>
-
-            <section id="ana-yemekler">
-                <h2>Ana Yemekler</h2>
-                <div class="menu-items">
-                    <div class="menu-item">
-                        <h3>Izgara Köfte</h3>
-                        <p>Yanında pilav ve salata</p>
-                        <span class="price">₺120</span>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Tavuk Şiş</h3>
-                        <p>Yanında pilav ve salata</p>
-                        <span class="price">₺100</span>
-                    </div>
-                </div>
-            </section>
-
-            <section id="tatlilar">
-                <h2>Tatlılar</h2>
-                <div class="menu-items">
-                    <div class="menu-item">
-                        <h3>Künefe</h3>
-                        <p>Antep fıstıklı</p>
-                        <span class="price">₺60</span>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Baklava</h3>
-                        <p>Fıstıklı</p>
-                        <span class="price">₺55</span>
-                    </div>
-                </div>
-            </section>
-
-            <section id="icecekler">
-                <h2>İçecekler</h2>
-                <div class="menu-items">
-                    <div class="menu-item">
-                        <h3>Türk Kahvesi</h3>
-                        <p>Geleneksel</p>
-                        <span class="price">₺25</span>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Çay</h3>
-                        <p>Demlik</p>
-                        <span class="price">₺15</span>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <h1>Lezzet Durağı Menü</h1>
+        <div id="qrcode"></div>
+        <p class="instructions">Menüyü görmek için QR kodu okutun</p>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // QR kodu oluştur
-            new QRCode(document.getElementById("qrcode"), {
-                text: window.location.href,
-                width: 256,
-                height: 256,
-                colorDark : "#000000",
-                colorLight : "#ffffff",
-                correctLevel : QRCode.CorrectLevel.H
-            });
 
-            // Sayfa içi linkler için smooth scroll
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const section = document.querySelector(this.getAttribute('href'));
-                    section.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
+    <script>
+        window.onload = function() {
+            try {
+                // Basit bir URL oluştur
+                const menuUrl = 'https://stark4280.github.io/lezzet-duragi-menu/menu.html';
+
+                // QR kod oluştur
+                const qr = qrcode(0, 'L');
+                qr.addData(menuUrl);
+                qr.make();
+
+                // QR kodu sayfaya ekle
+                document.getElementById('qrcode').innerHTML = qr.createImgTag(10);
+                
+            } catch (error) {
+                console.error('QR kod oluşturulurken hata:', error);
+            }
+        };
     </script>
 </body>
 </html> 
