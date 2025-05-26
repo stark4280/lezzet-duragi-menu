@@ -1,0 +1,22 @@
+LEZZET DURAĞI MENÜ SİSTEMİ
+========================
+
+KURULUM:
+1. Masaüstünde "Lezzet Durağı" adında bir klasör oluşturun
+2. index.html dosyasını bu klasöre kopyalayın
+3. index.html dosyasına çift tıklayın
+4. Menü otomatik olarak tarayıcıda açılacaktır
+
+KULLANIM:
+- Menüyü açmak için index.html dosyasına çift tıklayın
+- Menü otomatik olarak tarayıcıda açılacaktır
+- Tarayıcıyı tam ekran yapın (F11 tuşu)
+- Menüyü kapatmak için tarayıcıyı kapatın
+
+ÖNEMLİ NOTLAR:
+- index.html dosyasını yedekleyin
+- Bilgisayarı kapatırken tarayıcıyı kapatın
+- Menüyü güncellemek için bize ulaşın
+
+TEKNİK DESTEK:
+[İletişim bilgileriniz] 
